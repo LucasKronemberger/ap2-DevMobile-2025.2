@@ -36,8 +36,8 @@
 
     <TextView
         android:id="@+id/descricao"
-        android:layout_width="375dp"
-        android:layout_height="73dp"
+        android:layout_width="335dp"
+        android:layout_height="94dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Descubra a sua pontuação de Qualidade do Sono e receba recomendações personalizadas em menos de 5 minutos."

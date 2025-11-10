@@ -13,7 +13,7 @@
         android:id="@+id/passo1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Passo 1/4: Seu mundo digital"
+        android:text="Passo 1/3: Seu mundo digital"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#1F2937"
@@ -93,7 +93,75 @@
                 android:layout_marginBottom="24dp"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-            <!-- TODO: Adicionar mais perguntas aqui -->
+            <!-- pergunta 3 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Você usa o celular assim que acorda (antes de qualquer outra tarefa)?"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#374151"
+                android:layout_marginBottom="8dp" />
+
+            <Switch
+                android:id="@+id/uso_celular_acordar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="Não (Priorizo outras tarefas)"
+                android:textOn="Sim (É a primeira coisa que faço)"
+                android:layout_marginBottom="24dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <!-- pergunta 4 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Você utiliza o modo noturno ou filtro de luz azul nas suas telas à noite?"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#374151"
+                android:layout_marginBottom="8dp" />
+
+            <Switch
+                android:id="@+id/modo_noturno_luz_azul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="Não"
+                android:textOn="Sim"
+                android:layout_marginBottom="24dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <!-- pergunta 5 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Se você acorda no meio da noite (ex: para ir ao banheiro), você checa o celular?"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#374151"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/checar_madruga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+                <RadioButton
+                    android:id="@+id/madruga_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nunca/Raramente" />
+                <RadioButton
+                    android:id="@+id/madruga_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Às vezes, por impulso" />
+                <RadioButton
+                    android:id="@+id/madruga_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sempre que acordo" />
+            </RadioGroup>
 
         </LinearLayout>
     </ScrollView>
