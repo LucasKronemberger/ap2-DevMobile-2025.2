@@ -9,12 +9,19 @@ import androidx.core.view.WindowInsetsCompat
 class RotinaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_rotina)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val digitalScore = intent.getIntExtra("PONTOS_DIGITAL", 0)
+
+        if (savedInstanceState == null) {
+            val fragment = HabitosFragment()
+            val args = Bundle()
+            args.putInt("PONTOS_DIGITAL", digitalScore)
+            fragment.arguments = args
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit()
+        }
         }
     }
-}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_hora">
+        <item>Menos de 6 horas</item>
+        <item>De 6 a 7 horas</item>
+        <item>De 7 a 8 horas</item>
+        <item>Mais de 8 horas</item>
+    </string-array>
+</resources>

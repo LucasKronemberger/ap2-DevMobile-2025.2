@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Ap2LucasKronemberger"
         tools:targetApi="31">
         <activity
+            android:name=".AmbienteActivity"
+            android:exported="false" />
+        <activity
             android:name=".RotinaActivity"
             android:exported="false" />
         <activity
