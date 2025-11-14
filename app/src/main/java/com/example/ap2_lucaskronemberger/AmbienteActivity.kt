@@ -1,20 +1,80 @@
 package com.example.ap2_lucaskronemberger
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.RadioGroup
+import android.widget.SeekBar
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class AmbienteActivity : AppCompatActivity() {
+
+    private var scoreFromPreviousStep: Int = 0
+
+
+
+    private lateinit var tvPasso3: TextView
+    private lateinit var tvNivel: TextView
+    private lateinit var seekbar: SeekBar
+    private lateinit var rgTemperatura: RadioGroup
+    private lateinit var btNext: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_ambiente)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        scoreFromPreviousStep = intent.getIntExtra("PONTOS_TOTAIS", 0)
+
+        tvPasso3 = findViewById(R.id.passo3)
+        tvNivel = findViewById(R.id.nivel)
+        seekbar = findViewById(R.id.seekbar)
+        rgTemperatura = findViewById(R.id.temperatura_quarto)
+        btNext = findViewById(R.id.bt_next)
+
+
+        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                // Atualiza o TextView (o seu 'nivel')
+                tvNivel.text = "Nível: $progress"
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        btNext.setOnClickListener {
+            collectDataAndProceed()
+        }
+    }
+
+    private fun collectDataAndProceed() {
+        var score = scoreFromPreviousStep
+        var isFormValid = true
+
+        val darknessLevel = seekbar.progress
+        when {
+            darknessLevel >= 8 -> score += 10 // Ótimo
+            darknessLevel >= 5 -> score += 5  // Bom
+            else -> score += 0                // Ruim
+        }
+
+        when (rgTemperatura.checkedRadioButtonId) {
+            R.id.temp_confortavel -> score += 10
+            R.id.temp_quente -> score += 0
+            R.id.temp_frio -> score += 0
+            else -> {
+                isFormValid = false // Validação
+                Toast.makeText(this, "Por favor, selecione a temperatura", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        if (isFormValid) {
+            val intent = Intent(this, ResultadoActivity::class.java)
+            intent.putExtra("PONTUACAO_FINAL", score)
+            startActivity(intent)
+
+            finish()
         }
     }
 }

@@ -5,6 +5,111 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AmbienteActivity">
+    tools:context=".AmbienteActivity"
+    android:background="#F5F7FA"
+    android:padding="32dp">
+
+    <TextView
+        android:id="@+id/passo3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Passo 3/3: Ambiente do Quarto"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1F2937"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/passo3"
+        app:layout_constraintBottom_toTopOf="@+id/bt_next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Quão escuro é o seu quarto? (0=Claro, 10=Totalmente Escuro)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#374151"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/nivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nível: 5"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#6366F1"
+                android:layout_marginBottom="8dp"/>
+
+            <SeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="5"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Qual a temperatura do seu quarto?"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#374151"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/temperatura_quarto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+                <RadioButton
+                    android:id="@+id/temp_confortavel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confortável (Fresco)" />
+                <RadioButton
+                    android:id="@+id/temp_quente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Muito Quente" />
+                <RadioButton
+                    android:id="@+id/temp_frio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Muito Frio" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ver Resultado Final"
+        android:textSize="16sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="#10B981"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
