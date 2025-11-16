@@ -9,6 +9,9 @@
     android:background="#F5F7FA"
     android:padding="32dp">
 
+
+    <!-- TextView, ScrollView, LinearLayout, RadioGroup, RadioButton, Switch, Button -->
+
     <TextView
         android:id="@+id/passo1"
         android:layout_width="0dp"
@@ -52,22 +55,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp">
                 <RadioButton
-                    android:id="@+id/rb_tela1"
+                    android:id="@+id/tela1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Mais de 60 minutos" />
                 <RadioButton
-                    android:id="@+id/rb_tela2"
+                    android:id="@+id/tela2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="30 a 60 minutos" />
                 <RadioButton
-                    android:id="@+id/rb_tela3"
+                    android:id="@+id/tela3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Menos de 30 minutos" />
                 <RadioButton
-                    android:id="@+id/rb_tela4"
+                    android:id="@+id/tela4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Uso até cair no sono" />

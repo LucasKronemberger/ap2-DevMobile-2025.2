@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class QuizDigitalActivity : AppCompatActivity() {
 
+    // declarando as views para usar o find depois
     private lateinit var tempoDeTela: RadioGroup
     private lateinit var notificacaoSilenciada: Switch
     private lateinit var btNext: Button
@@ -24,6 +25,7 @@ class QuizDigitalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_digital)
 
+        // adicionando conteudo nas variáveis
         tempoDeTela = findViewById(R.id.tempo_de_tela)
         notificacaoSilenciada = findViewById(R.id.notificacao_silenciada)
         btNext = findViewById(R.id.bt_next)
@@ -36,19 +38,21 @@ class QuizDigitalActivity : AppCompatActivity() {
         }
     }
 
+
+    // pontuação das perguntas
     private fun collectDataAndProceed() {
         var score = 0
-        var isFormValid = true
+        var isFormValid = true // check de resposta preenchida
 
         // pergunta 1
         when (tempoDeTela.checkedRadioButtonId) {
-            R.id.rb_tela1 -> score += 10
-            R.id.rb_tela2 -> score += 7
-            R.id.rb_tela3 -> score += 3
-            R.id.rb_tela4 -> score += 0
+            R.id.tela1 -> score += 10
+            R.id.tela2 -> score += 7
+            R.id.tela3 -> score += 3
+            R.id.tela4 -> score += 0
             else -> {
                 isFormValid = false
-                Toast.makeText(this, "Por favor, responda a pergunta 1", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, responda a pergunta 1", Toast.LENGTH_SHORT).show() //pop up
             }
         }
 
@@ -59,7 +63,11 @@ class QuizDigitalActivity : AppCompatActivity() {
 
         // pergunta 3
         if (isFormValid) {
-            if (usoCelularManha.isChecked) score += 5
+            if (usoCelularManha.isChecked) {
+                score += 0
+            } else {
+                score += 5
+            }
         }
 
         //pergunta 4
@@ -80,9 +88,9 @@ class QuizDigitalActivity : AppCompatActivity() {
             }
         }
 
-        if (isFormValid) {
+        if (isFormValid) { // so passa de tela se tiver respota 1 e 5 marcada
             val intent = Intent(this, RotinaActivity::class.java)
-            intent.putExtra("PONTOS_DIGITAL", score)
+            intent.putExtra("PONTOS_DIGITAL", score) // enchendo a mochila de pontos para a proxima tela
             startActivity(intent)
 
             println("Pontuação Digital Total Calculada: $score")

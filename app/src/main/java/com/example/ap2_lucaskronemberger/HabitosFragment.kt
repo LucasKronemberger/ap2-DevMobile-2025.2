@@ -13,10 +13,9 @@ import android.widget.Spinner
 
 class HabitosFragment : Fragment() {
 
-    // --- Variáveis da Classe ---
-    private var initialScore: Int = 0 // Variável para guardar a pontuação
+    private var initialScore: Int = 0
 
-    // Declaração das Views (usando seus nomes)
+
     private lateinit var spinner: Spinner
     private lateinit var cafe_noite: CheckBox
     private lateinit var exercicio_noite: CheckBox
@@ -39,7 +38,6 @@ class HabitosFragment : Fragment() {
         exercicio_noite = view.findViewById(R.id.exercicio_noite)
         btNext = view.findViewById(R.id.bt_next_habits)
 
-        // 3. Configura o Adapter
         val adapter = ArrayAdapter.createFromResource(
             requireContext(),
             R.array.spinner_hora,

@@ -9,6 +9,8 @@
     android:background="#F5F7FA">
 
     <!-- TODO: Update blank fragment layout -->
+    <!-- TextView, ScrolView, LinearLayout, Spinner, CheckBox, Button -->
+
     <TextView
         android:id="@+id/passo2"
         android:layout_width="wrap_content"

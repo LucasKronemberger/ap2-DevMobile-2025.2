@@ -13,7 +13,7 @@ class RotinaActivity : AppCompatActivity() {
 
         val digitalScore = intent.getIntExtra("PONTOS_DIGITAL", 0)
 
-        if (savedInstanceState == null) {
+        if (savedInstanceState == null) { //evitar crash ao rodar a tela, impede criar fragmento em cima de fragmento
             val fragment = HabitosFragment()
             val args = Bundle()
             args.putInt("PONTOS_DIGITAL", digitalScore)

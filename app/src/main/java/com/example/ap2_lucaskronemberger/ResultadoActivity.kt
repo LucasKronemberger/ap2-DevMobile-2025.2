@@ -56,17 +56,17 @@ class ResultadoActivity : AppCompatActivity() {
         val classificationColor: Int
 
         when {
-            score > 80 -> {
+            score >= 80 -> {
                 classification = "Qualidade do Sono: Ótima"
                 recommendation = "Parabéns! Seus hábitos de sono e bem-estar digital são excelentes. Continue assim!"
                 classificationColor = ContextCompat.getColor(this, R.color.cor_otima)
             }
-            score > 50 -> {
+            score >= 50 -> {
                 classification = "Qualidade do Sono: Boa"
                 recommendation = "Você está no caminho certo. Tente melhorar o ambiente do seu quarto (mais escuro e silencioso) e reduzir o uso de telas 1h antes de dormir."
                 classificationColor = ContextCompat.getColor(this, R.color.cor_boa)
             }
-            score > 30 -> {
+            score >= 30 -> {
                 classification = "Qualidade do Sono: Regular"
                 recommendation = "Seu sono pode melhorar. Foque em criar uma rotina: evite cafeína à tarde, silencie o celular e tente dormir no mesmo horário."
                 classificationColor = ContextCompat.getColor(this, R.color.cor_regular)
@@ -92,9 +92,9 @@ class ResultadoActivity : AppCompatActivity() {
 
 
             val sendIntent = Intent().apply {
-                action = Intent.ACTION_SEND // Ação de enviar
-                putExtra(Intent.EXTRA_TEXT, shareText) // O texto
-                type = "text/plain" // O tipo de conteúdo
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, shareText)
+                type = "text/plain"
             }
 
 

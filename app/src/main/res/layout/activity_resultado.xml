@@ -9,6 +9,8 @@
     android:padding="32dp"
     android:background="#F5F7FA">
 
+    <!-- TextView, Button -->
+
     <TextView
         android:id="@+id/seu_resultado"
         android:layout_width="0dp"

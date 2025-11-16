@@ -9,6 +9,8 @@
     android:background="#F5F7FA"
     android:padding="32dp">
 
+    <!-- TextView, ScrollView, LinearLayout, SeekBar, RadioGroup, RadioButton, Button -->
+
     <TextView
         android:id="@+id/passo3"
         android:layout_width="0dp"

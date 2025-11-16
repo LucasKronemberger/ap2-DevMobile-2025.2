@@ -15,10 +15,10 @@ class AmbienteActivity : AppCompatActivity() {
 
 
 
-    private lateinit var tvPasso3: TextView
-    private lateinit var tvNivel: TextView
+    private lateinit var Passo3: TextView
+    private lateinit var Nivel: TextView
     private lateinit var seekbar: SeekBar
-    private lateinit var rgTemperatura: RadioGroup
+    private lateinit var Temperatura: RadioGroup
     private lateinit var btNext: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,17 +27,16 @@ class AmbienteActivity : AppCompatActivity() {
 
         scoreFromPreviousStep = intent.getIntExtra("PONTOS_TOTAIS", 0)
 
-        tvPasso3 = findViewById(R.id.passo3)
-        tvNivel = findViewById(R.id.nivel)
+        Passo3 = findViewById(R.id.passo3)
+        Nivel = findViewById(R.id.nivel)
         seekbar = findViewById(R.id.seekbar)
-        rgTemperatura = findViewById(R.id.temperatura_quarto)
+        Temperatura = findViewById(R.id.temperatura_quarto)
         btNext = findViewById(R.id.bt_next)
 
 
         seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                // Atualiza o TextView (o seu 'nivel')
-                tvNivel.text = "Nível: $progress"
+                Nivel.text = "Nível: $progress"
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
@@ -52,14 +51,14 @@ class AmbienteActivity : AppCompatActivity() {
         var score = scoreFromPreviousStep
         var isFormValid = true
 
-        val darknessLevel = seekbar.progress
+        val niveldabarra = seekbar.progress
         when {
-            darknessLevel >= 8 -> score += 10 // Ótimo
-            darknessLevel >= 5 -> score += 5  // Bom
+            niveldabarra >= 8 -> score += 10 // Ótimo
+            niveldabarra >= 5 -> score += 5  // Bom
             else -> score += 0                // Ruim
         }
 
-        when (rgTemperatura.checkedRadioButtonId) {
+        when (Temperatura.checkedRadioButtonId) {
             R.id.temp_confortavel -> score += 10
             R.id.temp_quente -> score += 0
             R.id.temp_frio -> score += 0
