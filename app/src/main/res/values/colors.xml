@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="cor_primaria">#6366F1</color>
+    <color name="cor_secundaria">#10B981</color>
+    <color name="cor_background">#F5F7FA</color>
+    <color name="cor_texto_principal">#1F2937</color>
+    <color name="cor_texto_secundario">#4B5563</color>
+
+
+    <color name="cor_otima">#6366F1</color>
+    <color name="cor_boa">#10B981</color>
+    <color name="cor_regular">#F59E0B</color>
+    <color name="cor_critica">#EF4444</color>
 </resources>
