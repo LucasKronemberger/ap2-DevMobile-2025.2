@@ -30,6 +30,8 @@ O usuário na tela de Resultado pode compartilhar a pontuação e a classificaç
 ### Tela 4: <img width="397" height="884" alt="image" src="https://github.com/user-attachments/assets/61b71b70-877f-41de-9586-fd61c0b0b1f3" />
 ### Tela 5: <img width="395" height="883" alt="image" src="https://github.com/user-attachments/assets/c752b75c-2520-4a53-b320-9660a6f07ff8" />
 
+## Link para Download
+https://github.com/LucasKronemberger/ap2-DevMobile-2025.2/releases/tag/v1.0
 
 
 
