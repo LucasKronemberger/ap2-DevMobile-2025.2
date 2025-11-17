@@ -9,7 +9,7 @@ Quiz interativo para avaliar a qualidade de sono levando em consideração o bem
 4. AmbienteActivity: Passo 3, o ultimo. Focado em entender o ambiente onde o usuário dorme.
 5. ResultadoActivity: Tela de resultado mostrando a pontuação e recomendação. O usuário pode compartilhar seu resultado com outros apps.
 
-## Múltiplos Tipos de Views
+## Tipos de Views
 - TextView
 - Button
 - ImageView
